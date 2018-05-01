@@ -1,0 +1,23 @@
+{
+  "name": "angular-notification-service",
+  "version": "0.1.1",
+  "description": "Simple notification service for AngularJS application.",
+  "repository": "http://github.com/gghez/angular-notification-service.git",
+  "main": [
+    "src/**/*"
+  ],
+  "peerDependencies": {
+    "angular": "~1.3.14"
+  },
+  "homepage": "https://github.com/gghez/angular-notification-service",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "7c4e2ae7e29460fbf1a4b17deab9bec87267d09c"
+  },
+  "_source": "https://github.com/gghez/angular-notification-service.git",
+  "_target": "^0.1.1",
+  "_originalSource": "angular-notification-service",
+  "_direct": true
+}

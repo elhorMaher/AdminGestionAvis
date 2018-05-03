@@ -16,10 +16,7 @@ export class UserLoginComponent {
 
   /// Social Login
 
-  signInWithGithub() {
-    this.auth.githubLogin()
-    .then(() => this.afterSignIn());
-  }
+  
 
   signInWithGoogle() {
     this.auth.googleLogin()

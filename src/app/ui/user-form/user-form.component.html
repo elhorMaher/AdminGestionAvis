@@ -1,7 +1,7 @@
 <form [formGroup]="userForm"  *ngIf="newUser"  (ngSubmit)="signup()">
 
-  <h3>New User Signup</h3>
-  <p class="button is-small" (click)="toggleForm()">Already Registered?</p>
+  <h3>inscription d'un nouvel utilisateur</h3>
+  <p class="button is-small" (click)="toggleForm()">deja enregestrer?</p>
   <hr>
 
   <label for="email">Email</label>
@@ -12,7 +12,7 @@
     {{ formErrors.email }}
   </div>
 
-  <label for="password">Password</label>
+  <label for="password">mot de passe</label>
   <input type="password" id="password" class="input"
          formControlName="password" required >
 
@@ -20,16 +20,16 @@
     {{ formErrors.password }}
   </div>
 
-  <div *ngIf="userForm.valid" class="notification is-success">Form is valid</div>
-  <button type="submit" class="button" [disabled]="!userForm.valid">Submit</button>
+  <div *ngIf="userForm.valid" class="notification is-success">Form est valider</div>
+  <button type="submit" class="button" [disabled]="!userForm.valid">envoyer</button>
 
 </form>
 
 
 <form [formGroup]="userForm"  *ngIf="!newUser"  (ngSubmit)="login()">
 
-  <h3>Existing User Login</h3>
-  <p class="btn button is-small" (click)="toggleForm()">New User?</p>
+  <h3>utilisateur deja enregestrer</h3>
+  <p class="btn button is-small" (click)="toggleForm()">nouvel utilisateur?</p>
   <hr>
 
   <label for="email">Email</label>
@@ -40,7 +40,7 @@
     {{ formErrors.email }}
   </div>
 
-  <label for="password">Password</label>
+  <label for="password">mot de passe</label>
   <input type="password" id="password" class="input"
          formControlName="password" required >
 
@@ -50,9 +50,9 @@
 
   <button type="submit" class="button" [disabled]="!userForm.valid">Submit</button>
 
-  <span *ngIf="userForm.valid" class="help is-success">Form Looks Valid</span>
+  <span *ngIf="userForm.valid" class="help is-success">formulaire validé </span>
 
   <a *ngIf="!passReset && userForm.controls.email.valid" class="help is-info" (click)="resetPassword()">Reset Password for {{userForm.value.email}}?</a>
-  <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p>
+  <p *ngIf="passReset" class="help is-info"> demande de réinitialisation. Vérifiez vos instructions par e-mail.</p>
 
 </form>

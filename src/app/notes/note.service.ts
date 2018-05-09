@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 
 import { Note } from './note-model';
-
+import { AuthService } from '../core/auth.service';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
@@ -16,11 +16,16 @@ interface NewNote {
 @Injectable()
 export class NoteService {
 
+
   notesCollection: AngularFirestoreCollection<Note>;
   noteDocument:   AngularFirestoreDocument<Node>;
+  
 
-  constructor(private afs: AngularFirestore) {
+
+
+  constructor(private afs: AngularFirestore,public auth: AuthService) {
     this.notesCollection = this.afs.collection('notes', (ref) => ref.orderBy('time', 'desc').limit(5));
+
   }
 
   getData(): Observable<Note[]> {
@@ -42,7 +47,10 @@ export class NoteService {
   }
 
   create(content: string) {
+    /*var  uid =JSON.stringify(user.displayName);
+    console.log(user.displayName);*/
     const note = {
+      userId: "user.displayName" ,
       content,
       hearts: 0,
       time: new Date().getTime(),

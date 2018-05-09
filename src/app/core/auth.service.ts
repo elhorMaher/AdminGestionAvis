@@ -68,19 +68,19 @@ export class AuthService {
   }
 
   //// Anonymous Auth ////
-
   anonymousLogin() {
-    return this.afAuth.auth.signInAnonymously()
-      .then((user) => {
-        this.notify.update('bienvenue chez tebsi', 'success');
-        return this.updateUserData(user); // if using firestore
-      })
-      .catch((error) => {
-        console.error(error.code);
-        console.error(error.message);
-        this.handleError(error);
-      });
-  }
+     return this.afAuth.auth.signInAnonymously()
+       .then((user) => {
+         this.notify.update('bienvenue!!!', 'success');
+         return this.updateUserData(user); // if using firestore
+       })
+       .catch((error) => {
+         console.error(error.code);
+         console.error(error.message);
+         this.handleError(error);
+       });
+   }
+
 
   //// Email/Password Auth ////
 

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
 interface NewNote {
+  userId:string;
   content: string;
   hearts: 0;
   time: number;
@@ -37,7 +38,7 @@ export class NoteService {
     return this.notesCollection.snapshotChanges().map((actions) => {
       return actions.map((a) => {
         const data = a.payload.doc.data() as Note;
-        return { id: a.payload.doc.id, content: data.content, hearts: data.hearts, time: data.time };
+        return { userId:data.id,id: a.payload.doc.id, content: data.content, hearts: data.hearts, time: data.time };
       });
     });
   }

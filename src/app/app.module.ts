@@ -26,11 +26,19 @@ import { AngularFireModule } from 'angularfire2';
 export const firebaseConfig = environment.firebaseConfig;
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
+import {RatingModule} from "ngx-rating";
+import { StarRatingModule } from 'angular-star-rating';
+import { RestaurantFormComponent } from './restaurant/restaurant-form/restaurant-form.component';
+import { RestaurantDetailComponent } from './restaurant/restaurant-detail/restaurant-detail.component';
+import { RestaurantListComponent } from './restaurant/restaurant-list/restaurant-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    RestaurantFormComponent,
+    RestaurantDetailComponent,
+    RestaurantListComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +50,7 @@ import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.compon
     UiModule,
     NotesModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    StarRatingModule
   ],
   bootstrap: [
     AppComponent,

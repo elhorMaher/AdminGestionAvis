@@ -5,5 +5,8 @@ import { AuthService } from './core/auth.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'NoTEme';
+}

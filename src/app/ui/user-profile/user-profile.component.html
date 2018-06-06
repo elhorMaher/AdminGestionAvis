@@ -15,7 +15,7 @@ Connectez-vous pour commencer...</p>
 <!-- User logged in -->
 <ng-template #authenticated>
   <div *ngIf="auth.user | async as user">
-    <h3>bonjour, {{ user.displayName }}</h3>
+    <h3>bonjour, {{ user.displayName }} </h3>
     <img class="card-img-top" [src]="user.photoURL || '../../assets/favicon.ico'" width=50px>
     <!--p class="text-truncate">UID: {{ user.uid }}</p-->
     <br/>

@@ -9,7 +9,9 @@ import { AuthService } from '../../core/auth.service';
 })
 export class UserProfileComponent {
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService) { 
+    
+   }
 
   logout() {
     this.auth.signOut();

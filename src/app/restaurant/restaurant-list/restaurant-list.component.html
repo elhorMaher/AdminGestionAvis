@@ -1,6 +1,13 @@
-<p>
-  restaurant-list works!
-</p>
-<button> <a  routerLink="/add-restaurant">
-  ajouter un resterant
-</a> </button>
+
+<p>This is a very basic demo of listing restaurant</p>
+
+<hr>
+    
+<div *ngFor="let restaurant of restaurant | async">
+  <app-restaurant-detail [restaurant]="restaurant"></app-restaurant-detail>
+  
+
+</div>
+<button (click)="rederection()">
+  ajouter un restaurant
+ </button>
